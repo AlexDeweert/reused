@@ -3,17 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		C4A039A726EF02DB890176A9 /* Pods_reused.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06CEEED099C2ACBC1664FF4 /* Pods_reused.framework */; };
+		FA61FE24255DB35000E4B619 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA61FE23255DB35000E4B619 /* LoginView.swift */; };
 		FA77F883255B2064000BAE9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77F882255B2064000BAE9F /* AppDelegate.swift */; };
 		FA77F885255B2064000BAE9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77F884255B2064000BAE9F /* SceneDelegate.swift */; };
-		FA77F887255B2064000BAE9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77F886255B2064000BAE9F /* ViewController.swift */; };
+		FA77F887255B2064000BAE9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77F886255B2064000BAE9F /* LoginViewController.swift */; };
 		FA77F88D255B2064000BAE9F /* reused.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA77F88B255B2064000BAE9F /* reused.xcdatamodeld */; };
 		FA77F88F255B2065000BAE9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA77F88E255B2065000BAE9F /* Assets.xcassets */; };
 		FA77F892255B2065000BAE9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA77F890255B2065000BAE9F /* LaunchScreen.storyboard */; };
+		FA7F1B0A255DC05D0060DC89 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F1B09255DC05D0060DC89 /* AppRouter.swift */; };
+		FA7F1B0D255DC0A10060DC89 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F1B0C255DC0A10060DC89 /* ChatView.swift */; };
+		FA7F1B10255DC0D50060DC89 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F1B0F255DC0D50060DC89 /* ChatViewController.swift */; };
+		FA7F1B13255DC55B0060DC89 /* RoutingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F1B12255DC55B0060DC89 /* RoutingState.swift */; };
+		FA7F1B16255DC7B60060DC89 /* RoutingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7F1B15255DC7B60060DC89 /* RoutingReducer.swift */; };
 		FAF01563255D9C090085003C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF01562255D9C090085003C /* AppState.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,14 +27,20 @@
 		3E0FA6A601C9D49C36A054F6 /* Pods-reused.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reused.debug.xcconfig"; path = "Target Support Files/Pods-reused/Pods-reused.debug.xcconfig"; sourceTree = "<group>"; };
 		44E51F45522B151329C8C2C3 /* Pods-reused.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reused.release.xcconfig"; path = "Target Support Files/Pods-reused/Pods-reused.release.xcconfig"; sourceTree = "<group>"; };
 		D06CEEED099C2ACBC1664FF4 /* Pods_reused.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reused.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA61FE23255DB35000E4B619 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = reused/LoginView.swift; sourceTree = SOURCE_ROOT; };
 		FA77F87F255B2064000BAE9F /* reused.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reused.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA77F882255B2064000BAE9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA77F884255B2064000BAE9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA77F886255B2064000BAE9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA77F886255B2064000BAE9F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA77F88C255B2064000BAE9F /* reused.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = reused.xcdatamodel; sourceTree = "<group>"; };
 		FA77F88E255B2065000BAE9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA77F891255B2065000BAE9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA77F893255B2065000BAE9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA7F1B09255DC05D0060DC89 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		FA7F1B0C255DC0A10060DC89 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatView.swift; path = reused/VIew/ChatView.swift; sourceTree = SOURCE_ROOT; };
+		FA7F1B0F255DC0D50060DC89 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		FA7F1B12255DC55B0060DC89 /* RoutingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingState.swift; sourceTree = "<group>"; };
+		FA7F1B15255DC7B60060DC89 /* RoutingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingReducer.swift; sourceTree = "<group>"; };
 		FAF01562255D9C090085003C /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,7 +62,6 @@
 				3E0FA6A601C9D49C36A054F6 /* Pods-reused.debug.xcconfig */,
 				44E51F45522B151329C8C2C3 /* Pods-reused.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -107,6 +118,8 @@
 		FAF0155F255D7F080085003C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA61FE23255DB35000E4B619 /* LoginView.swift */,
+				FA7F1B0C255DC0A10060DC89 /* ChatView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -114,7 +127,8 @@
 		FAF01560255D7F100085003C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FA77F886255B2064000BAE9F /* ViewController.swift */,
+				FA77F886255B2064000BAE9F /* LoginViewController.swift */,
+				FA7F1B0F255DC0D50060DC89 /* ChatViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -123,6 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				FAF01562255D9C090085003C /* AppState.swift */,
+				FA7F1B09255DC05D0060DC89 /* AppRouter.swift */,
+				FA7F1B12255DC55B0060DC89 /* RoutingState.swift */,
+				FA7F1B15255DC7B60060DC89 /* RoutingReducer.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -240,10 +257,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA77F887255B2064000BAE9F /* ViewController.swift in Sources */,
+				FA61FE24255DB35000E4B619 /* LoginView.swift in Sources */,
+				FA7F1B16255DC7B60060DC89 /* RoutingReducer.swift in Sources */,
+				FA77F887255B2064000BAE9F /* LoginViewController.swift in Sources */,
 				FAF01563255D9C090085003C /* AppState.swift in Sources */,
 				FA77F883255B2064000BAE9F /* AppDelegate.swift in Sources */,
+				FA7F1B0D255DC0A10060DC89 /* ChatView.swift in Sources */,
+				FA7F1B0A255DC05D0060DC89 /* AppRouter.swift in Sources */,
 				FA77F885255B2064000BAE9F /* SceneDelegate.swift in Sources */,
+				FA7F1B10255DC0D50060DC89 /* ChatViewController.swift in Sources */,
+				FA7F1B13255DC55B0060DC89 /* RoutingState.swift in Sources */,
 				FA77F88D255B2064000BAE9F /* reused.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
