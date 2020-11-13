@@ -1,33 +1,38 @@
 //
-//  ViewController.swift
+//  LoginView.swift
 //  reused
 //
-//  Created by Alex L. Deweert on 2020-11-10.
+//  Created by Alex L. Deweert on 2020-11-12.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class LoginView : UIView {
+    
     var loginButton:UIButton?
     var emailTextField:UITextField?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = UIColor.purple
+        createSubviews()
+    }
+    
+    //All subclasses of UIView must implement required init
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.backgroundColor = UIColor.purple
+        createSubviews()
+    }
+    
+    func createSubviews() {
         self.loginButton = UIButton()
         self.emailTextField = UITextField()
-        
         guard let loginButton = self.loginButton else {print("\(String(describing: self)): loginButton was nil");return}
         guard let emailTextField = self.emailTextField else {print("\(String(describing: self)): emailTextField was nil");return}
-        
         initLoginButton(button: loginButton)
         initEmailTextField(textField: emailTextField)
         setupConstraints(button: loginButton, textField: emailTextField)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.view.backgroundColor = UIColor.purple
     }
     
     func initLoginButton(button: UIButton) {
@@ -39,7 +44,7 @@ class ViewController: UIViewController {
         button.layer.borderColor = CGColor.init(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
         button.layer.backgroundColor = CGColor.init(red: 1, green: 1, blue: 1, alpha: 0.75)
         button.setTitleColor(UIColor.white, for: UIControl.State.normal)
-        self.view.addSubview(button)
+        self.addSubview(button)
     }
     
     func initEmailTextField(textField: UITextField) {
@@ -49,7 +54,7 @@ class ViewController: UIViewController {
         textField.layer.borderColor = CGColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
         textField.layer.backgroundColor = CGColor.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         textField.attributedPlaceholder = NSAttributedString(string: "E-mail Adress", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
-        self.view.addSubview(textField)
+        self.addSubview(textField)
     }
     
     func setupConstraints(button: UIButton, textField: UITextField) {
@@ -58,12 +63,12 @@ class ViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             //Login button
-            button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -100),
+            button.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -100),
             button.heightAnchor.constraint(equalToConstant: 100.0),
             button.widthAnchor.constraint(equalToConstant: 200.0),
             //Email text field
-            textField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            textField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             textField.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 20),
             textField.heightAnchor.constraint(equalToConstant: 40.0),
             textField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 25)
@@ -75,7 +80,4 @@ class ViewController: UIViewController {
         print("clicked a button")
     }
     
-
-
 }
-
