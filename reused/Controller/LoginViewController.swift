@@ -9,32 +9,28 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    var loginView: LoginView
     
-    
-//    required init?(coder: NSCoder) {
-//        print("2")
-//        fatalError("required init? not implemented in LoginViewController")
-//    }
-//
-//    required init(viewModel:LoginView) {
-//        print("3")
-//        super.init(nibName: nil, bundle: nil)
-//        self.view = viewModel
-//    }
-//
-//    convenience init() {
-//        self.init()
-//        fatalError("convenience init not implemented in LoginViewController")
-//    }
-    
-    var loginView = LoginView()
+    required init?(coder: NSCoder) {
+        print("2")
+        fatalError("required init? not implemented in LoginViewController")
+    }
+
+    init() {
+        print("3")
+        self.loginView = LoginView()
+        super.init(nibName: nil, bundle: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addSubview(self.loginView)
+        self.view = self.loginView
+        print("LoginViewController loaded")
     }
-    
-    override func loadView() {
-        self.view = loginView
-    }
-    
 }
+
+//Can't get this to fucking work for some reason
+//extension LoginViewController : LoginDelegate {
+//
+//}

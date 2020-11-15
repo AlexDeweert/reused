@@ -11,6 +11,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var appRouter: AppRouter?
+    
+    // MARK: TODO (Or not)
+    // Depending on whether or not the app already contains an authenticated user, we might need
+    // to set the rootViewController here to either "LoginViewController" or "MainViewController"
+    // assuming that the app goes from [splash -> auth] or [splash -> main] or [main -> auth]
+    // static let rootNavigationController: UINavigationController = UINavigationController(rootViewController: LoginViewController())
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
@@ -23,17 +29,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else {return}
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let navigationController = UINavigationController(rootViewController: LoginViewController())
-        window?.rootViewController = navigationController
+        //window?.rootViewController = SceneDelegate.rootNavigationController
+        window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
+        
+        
         guard let window = window as UIWindow? else {return}
         appRouter = AppRouter(window: window)
-        
-        
-//        let window = UIWindow(frame: UIScreen.main.bounds)
-//        self.window = window
-//        window.makeKeyAndVisible()
-//        appRouter = AppRouter(window: window)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -70,3 +72,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+// This allows static reference to the SceneDelegate and it's rootViewController
+// called like: let rvc = SceneDelegate.shared.rootViewController
+extension SceneDelegate {
+    static var shared: SceneDelegate {
+        let scene = UIApplication.shared.connectedScenes.first
+        let delegate = scene?.delegate as! SceneDelegate
+        return delegate
+    }
+    
+    var rootViewController: RootViewController {
+        return window?.rootViewController as! RootViewController
+    }
+}

@@ -7,14 +7,22 @@
 
 import UIKit
 
+//@objc
+//protocol LoginDelegate {
+//    @objc
+//    func loginButtonAction(_ sender: LoginView)
+//}
+
 class LoginView : UIView {
     
     var loginButton:UIButton?
     var emailTextField:UITextField?
+    //var loginDelegate:LoginDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.purple
+        print("this")
         createSubviews()
     }
     
@@ -22,6 +30,7 @@ class LoginView : UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.backgroundColor = UIColor.purple
+        print("that")
         createSubviews()
     }
     
@@ -38,7 +47,7 @@ class LoginView : UIView {
     func initLoginButton(button: UIButton) {
         print("\(String(describing: self)): initializing login button")
         button.setTitle("Login", for: .normal)
-        button.addTarget(self, action: #selector(buttonAction), for: UIControl.Event.touchUpInside)
+        button.addTarget(self, action: #selector(loginButtonHandler), for: UIControl.Event.touchUpInside)
         button.layer.cornerRadius = 5
         button.layer.borderWidth = 1
         button.layer.borderColor = CGColor.init(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
@@ -73,11 +82,15 @@ class LoginView : UIView {
             textField.heightAnchor.constraint(equalToConstant: 40.0),
             textField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 25)
         ])
+        
     }
     
     @objc
-    func buttonAction() {
-        print("clicked a button")
+    func loginButtonHandler() {
+        print("LoginViewController => Clicked the loginButtonAction function")
+        UserDefaults.standard.setValue(true, forKey: "logged_in")
+        //Can't get this fucker to work
+        //loginDelegate?.loginButtonAction(self)
     }
     
 }

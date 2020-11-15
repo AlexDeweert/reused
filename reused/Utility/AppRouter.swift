@@ -14,17 +14,23 @@ enum RoutingDestination: String {
 
 final class AppRouter {
     
-//    let navigationController: UINavigationController
+//    let rootNavigationController: UINavigationController?
     
     init(window: UIWindow) {
 //        navigationController = UINavigationController()
 //        window.rootViewController = navigationController
+        
+//        self.rootNavigationController = UIApplication.shared.windows.first(where: {$0.isKeyWindow})?.rootViewController as? UINavigationController
+//        guard let rootNavigationController = self.rootNavigationController else {return}
+//        print("rootNavigationController 1 => \(String (describing: rootNavigationController))")
         
         store.subscribe(self) {
             $0.select {
                 $0.routingState
             }
         }
+        
+        print("AppRouter can seee static rootViewController => \(String (describing: SceneDelegate.shared.rootViewController))")
     }
     
     fileprivate func pushViewController(identifier: String, animated: Bool) {

@@ -1,16 +1,17 @@
 //
-//  ChatView.swift
+//  MainView.swift
 //  reused
 //
-//  Created by Alex L. Deweert on 2020-11-12.
+//  Created by Alex L. Deweert on 2020-11-13.
 //
 
 import UIKit
 
-class ChatView : UIView {
+class MainView : UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.green
+        self.backgroundColor = UIColor.white
+        print("this")
     }
     
     //All subclasses of UIView must implement required init
