@@ -10,15 +10,17 @@ import UIKit
 class ChatViewController : UIViewController {
     
     
-    var chatView = ChatView()
+    var chatView: ChatView?
     
     required init?(coder: NSCoder) {
+        self.chatView = ChatView()
         super.init(coder: coder)
         print("\(String(describing: self)) => required init?(...)")
         fatalError("required init? not implemented in ChatViewController")
     }
 
     init() {
+        self.chatView = ChatView()
         super.init(nibName: nil, bundle: nil)
         print("\(String(describing: self)) => init()")
         self.view = chatView

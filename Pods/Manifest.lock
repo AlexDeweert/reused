@@ -1,16 +1,20 @@
 PODS:
   - ReSwift (5.0.0)
+  - TwilioChatClient (4.0.1)
 
 DEPENDENCIES:
   - ReSwift
+  - TwilioChatClient (~> 4.0.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs:
     - ReSwift
+    - TwilioChatClient
 
 SPEC CHECKSUMS:
   ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
+  TwilioChatClient: d1727dfa46ed80e24960a0c7b56e8edde28dacd3
 
-PODFILE CHECKSUM: 833b5b78fb5d1ea343d7c385fb09dd2664a79e83
+PODFILE CHECKSUM: 106802023ccd9ec8fe2172350dd2330e2c115fd1
 
 COCOAPODS: 1.10.0

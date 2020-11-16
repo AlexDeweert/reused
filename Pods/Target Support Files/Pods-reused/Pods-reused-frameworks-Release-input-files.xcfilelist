@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-reused/Pods-reused-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework
+${PODS_ROOT}/TwilioChatClient/TwilioChatClient.framework

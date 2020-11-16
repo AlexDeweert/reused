@@ -12,18 +12,22 @@ class MainViewController: UIViewController {
     var mainView: MainView
     
     required init?(coder: NSCoder) {
+        self.mainView = MainView()
+        super.init(nibName: nil, bundle: nil)
+        print("\(String(describing: self)) => required init?(...)")
         fatalError("required init? not implemented in MainViewController")
     }
 
     init() {
         self.mainView = MainView()
         super.init(nibName: nil, bundle: nil)
+        print("\(String(describing: self)) => init()")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = self.mainView
-        print("MainViewController loaded")
+        print("\(String(describing: self)) => viewDidLoad()")
     }
     
     

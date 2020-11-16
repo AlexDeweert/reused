@@ -15,7 +15,6 @@ class LoginView : UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.purple
-        print("this")
         createSubviews()
     }
     
@@ -23,7 +22,6 @@ class LoginView : UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.backgroundColor = UIColor.purple
-        print("that")
         createSubviews()
     }
     

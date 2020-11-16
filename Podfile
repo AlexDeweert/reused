@@ -1,6 +1,7 @@
 target 'reused' do
     use_frameworks!
     source 'https://github.com/CocoaPods/Specs.git'
-    platform :ios, '8.0'
+    platform :ios, '11.0'
     pod 'ReSwift'
+    pod 'TwilioChatClient', '~> 4.0.1'
 end

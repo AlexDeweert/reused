@@ -12,20 +12,22 @@ class LoginViewController: UIViewController {
     var loginView: LoginView
     
     required init?(coder: NSCoder) {
-        print("2")
+        self.loginView = LoginView()
+        super.init(coder: coder)
+        print("\(String(describing: self)) => required init?(...)")
         fatalError("required init? not implemented in LoginViewController")
     }
 
     init() {
-        print("3")
         self.loginView = LoginView()
         super.init(nibName: nil, bundle: nil)
+        print("\(String(describing: self)) => init()")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(self.loginView)
         self.view = self.loginView
-        print("LoginViewController loaded")
+        print("\(String(describing: self)) => viewDidLoad()")
     }
 }
