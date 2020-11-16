@@ -29,8 +29,3 @@ class LoginViewController: UIViewController {
         print("LoginViewController loaded")
     }
 }
-
-//Can't get this to fucking work for some reason
-//extension LoginViewController : LoginDelegate {
-//
-//}

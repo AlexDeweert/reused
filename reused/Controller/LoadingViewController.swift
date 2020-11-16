@@ -17,7 +17,7 @@ class LoadingViewController : UIViewController {
         view.backgroundColor = UIColor.systemPurple
         view.addSubview(activityIndicator)
         activityIndicator.frame = view.bounds
-//        activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.4)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         initialServiceCalls()
     }
     
@@ -35,7 +35,7 @@ class LoadingViewController : UIViewController {
             else {
                 print("LoadingViewController => User NOT logged in, will nav to login screen")
                 //nav to login screen
-                SceneDelegate.shared.rootViewController.showLoginScreen()
+                SceneDelegate.shared.rootViewController.switchToLoginScreen()
             }
         })
     }

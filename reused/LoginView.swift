@@ -7,17 +7,10 @@
 
 import UIKit
 
-//@objc
-//protocol LoginDelegate {
-//    @objc
-//    func loginButtonAction(_ sender: LoginView)
-//}
-
 class LoginView : UIView {
     
     var loginButton:UIButton?
     var emailTextField:UITextField?
-    //var loginDelegate:LoginDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -87,10 +80,9 @@ class LoginView : UIView {
     
     @objc
     func loginButtonHandler() {
-        print("LoginViewController => Clicked the loginButtonAction function")
+        print("LoginView => Clicked the loginButtonHandler function")
         UserDefaults.standard.setValue(true, forKey: "logged_in")
-        //Can't get this fucker to work
-        //loginDelegate?.loginButtonAction(self)
+        SceneDelegate.shared.rootViewController.switchToMainScreen()
     }
     
 }
