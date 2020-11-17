@@ -4,4 +4,5 @@ target 'reused' do
     platform :ios, '11.0'
     pod 'ReSwift'
     pod 'TwilioChatClient', '~> 4.0.1'
+    pod 'Alamofire', '~> 5.2'
 end

@@ -1,20 +1,24 @@
 PODS:
+  - Alamofire (5.4.0)
   - ReSwift (5.0.0)
   - TwilioChatClient (4.0.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - ReSwift
   - TwilioChatClient (~> 4.0.1)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs:
+    - Alamofire
     - ReSwift
     - TwilioChatClient
 
 SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
   TwilioChatClient: d1727dfa46ed80e24960a0c7b56e8edde28dacd3
 
-PODFILE CHECKSUM: 106802023ccd9ec8fe2172350dd2330e2c115fd1
+PODFILE CHECKSUM: 3d5ca43fcc38b6b552190f050885aad14a3e7d10
 
 COCOAPODS: 1.10.0

@@ -24,7 +24,7 @@ class LoadingViewController : UIViewController {
     private func initialServiceCalls() {
         activityIndicator.startAnimating()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3), execute: {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1), execute: {
             self.activityIndicator.stopAnimating()
             
             if UserDefaults.standard.bool(forKey: "logged_in") {

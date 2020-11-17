@@ -88,7 +88,7 @@ extension MainView {
     func chatButtonHandler() {
         print("\(String(describing: self)) => chatButtonHandler()")
         let chatViewController = ChatViewController()
-        let nav = SceneDelegate.shared.rootViewController.currentNavigationController
+        let nav = SceneDelegate.shared.rootViewController.currentNavController
         nav.pushViewController(chatViewController, animated: true)
     }
 }

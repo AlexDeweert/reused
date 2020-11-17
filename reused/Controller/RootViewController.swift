@@ -16,25 +16,25 @@ import UIKit
 class RootViewController: UIViewController {
     
     //We're kind of treating this like a UIViewController at first
-    private var current: UINavigationController
+    private var _currentNavController: UINavigationController
     
-    public var currentNavigationController : UINavigationController {
-        get {return self.current}
-        set {self.current = newValue}
+    public var currentNavController : UINavigationController {
+        get {return self._currentNavController}
+        set {self._currentNavController = newValue}
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Loaded the RootViewController")
-        self.addChild(currentNavigationController)
-        currentNavigationController.view.frame = view.bounds
-        view.addSubview(currentNavigationController.view)
-        currentNavigationController.didMove(toParent: self)
+        self.addChild(currentNavController)
+        currentNavController.view.frame = view.bounds
+        view.addSubview(currentNavController.view)
+        currentNavController.didMove(toParent: self)
     }
 
     init() {
         let nav = UINavigationController(rootViewController: LoadingViewController())
-        self.current = nav
+        self._currentNavController = nav
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -50,7 +50,7 @@ class RootViewController: UIViewController {
     //with the switchToMainScreen function below.
     func switchToLoginScreen() {
         //Clear the viewcontroller stack if we log out
-        self.currentNavigationController.viewControllers.removeAll()
+        self.currentNavController.viewControllers.removeAll()
         let lvc = LoginViewController()
         let navigationController = UINavigationController(rootViewController: lvc)
         
@@ -58,37 +58,37 @@ class RootViewController: UIViewController {
         //navigationController.view.frame = view.bounds
         //view.addSubview(navigationController.view)
         
-        currentNavigationController.willMove(toParent: nil)
+        currentNavController.willMove(toParent: nil)
         self.addChild(navigationController)
         
-        transition(from: currentNavigationController, to: navigationController, duration: 0.75, options: [.transitionFlipFromRight], animations: {}, completion: { completed in
+        transition(from: currentNavController, to: navigationController, duration: 0.75, options: [.transitionFlipFromRight], animations: {}, completion: { completed in
             print("transition to LoginViewController successful")
         })
         
-        currentNavigationController.view.removeFromSuperview()
-        currentNavigationController.removeFromParent()
-        currentNavigationController.didMove(toParent: self)
-        currentNavigationController = navigationController
+        currentNavController.view.removeFromSuperview()
+        currentNavController.removeFromParent()
+        currentNavController.didMove(toParent: self)
+        currentNavController = navigationController
     }
     
     //The LoadingViewController will call this if the user is already logged in
     //or the LoginViewController will call this when authentication is complete.
     func switchToMainScreen() {
-        self.currentNavigationController.viewControllers.removeAll()
+        self.currentNavController.viewControllers.removeAll()
         let mvc = MainViewController()
         let navigationController = UINavigationController(rootViewController: mvc)
         
         //animateFadeTransition(to: navigationController)
-        currentNavigationController.willMove(toParent: nil)
+        self.currentNavController.willMove(toParent: nil)
         self.addChild(navigationController)
 
-        transition(from: currentNavigationController, to: navigationController, duration: 0.75, options: [.transitionFlipFromRight], animations: {}, completion: { completed in
+        transition(from: currentNavController, to: navigationController, duration: 0.75, options: [.transitionFlipFromRight], animations: {}, completion: { completed in
             print("transition MainViewController successful")
         })
         
-        currentNavigationController.view.removeFromSuperview()
-        currentNavigationController.removeFromParent()
-        currentNavigationController.didMove(toParent: self)
-        currentNavigationController = navigationController
+        currentNavController.view.removeFromSuperview()
+        currentNavController.removeFromParent()
+        currentNavController.didMove(toParent: self)
+        currentNavController = navigationController
     }
 }
